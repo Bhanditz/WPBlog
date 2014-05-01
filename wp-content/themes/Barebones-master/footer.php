@@ -1,5 +1,7 @@
 <?php get_sidebar(); ?>
 
+<h1 style="color:red">ANDY: footer.php</h1>
+
 <footer role="contentinfo">
 	<p>&copy;<?php echo date("Y"); ?> <a href="#top" title="Jump back to top">&#8593;</a></p>
 </footer>

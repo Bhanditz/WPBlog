@@ -17,7 +17,12 @@
         <?php elseif ( is_year() ) : ?><?php printf( __( '<span>Yearly Archive</span> %s' ), get_the_date('Y') ); ?>
         <?php elseif ( is_category() ) : ?><?php echo single_cat_title(); ?>
         <?php elseif ( is_search() ) : ?><?php printf( __( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?>
-        <?php elseif ( is_home() ) : ?>Latest Posts<?php else : ?>
+        <?php elseif ( is_home() ) : ?>
+        
+        
+        <h1 style="color:red">ANDY: wp-content/loop.php</h1>
+        
+        Latest Posts<?php else : ?>
         <?php endif; ?>
     </h1>
 
@@ -29,8 +34,17 @@
 			<?php ?>
                 <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
                 	<h2><?php the_title(); ?></h2>
+                	
+
+                	
+					<?php if ( has_post_thumbnail() ) : /* Europeana change: show the featured image in the listing */ ?>
+							<?php printf(the_post_thumbnail());?>
+					 <?php endif ?>
+
+					 
+					 
                 </a>
-                <?php the_excerpt(); ?>
+                START_EXCERPT<?php the_excerpt(); ?>END_EXCERT
                 <p class="entry-meta"><time datetime="<?php the_time('l, F jS, Y') ?>" pubdate><?php the_time('l jS F Y') ?></time></p>
 		</article>
 
@@ -38,7 +52,17 @@
 
 <?php endwhile; // End the loop. Whew. ?>
 
+        <h1 style="color:red">ANDY: wp-content/loop.php</h1>
+
+
+<!-- Europeana navigation -->        
+<?php numeric_posts_nav(); ?>
+
+
 <?php /* Display navigation to next/previous pages when applicable */ ?>
+
+<?php
+/*
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
     <ul class="navigation">
         <li class="older">
@@ -49,4 +73,10 @@
         </li>
     </ul>
 <?php endif; ?>
+*/
+?>
+
+
 </section>
+
+<h1 style="color:red">ANDY: wp-content/loop.php</h1>

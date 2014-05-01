@@ -1,13 +1,15 @@
 <?php get_header(); ?>
 
-	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+    <h1 style="color:red">ANDY: wp-content/single.php</h1>
 
+    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+	
         <article role="main" class="primary-content" id="post-<?php the_ID(); ?>">
             <header>
                 <h1><?php the_title(); ?></h1>
             </header>
 			
-			<?php the_post_thumbnail('full');?>
+			<?php /* the_post_thumbnail('full');  // Europeana change */ ?>
 			
 			<?php the_content(); ?>
 
@@ -31,4 +33,6 @@
             <?php endwhile; // end of the loop. ?>
         </article>
 
+        <h1 style="color:red">ANDY: end single.php</h1>
+        
 <?php get_footer(); ?>
